@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>News & Events | Thorgo Polytechnic Institute</title>
+<link rel="stylesheet" href="css/news.css"></head>
+<style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+ --navy:#10233f; --blue:#032645; --sky:#eaf4fb; --gold:#f4b942;
+ --white:#fff; --dark:#172033; --muted:#667085; --light:#f6f8fb;
+ --border:#e5e7eb; --shadow:0 14px 40px rgba(16,35,63,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{
+scroll-behavior:smooth}
+body{
+font-family:Inter,Arial,sans-serif;color:var(--dark);line-height:1.6;background:#fff}
+a{
+text-decoration:none;color:inherit}
+img{
+max-width:100%;display:block}
+.container{
+width:min(1180px,92%);
+margin:auto}
+.topbar{
+background:var(--navy);
+color:#fff;
+font-size:13px}
+.topbar .container{
+display:flex;
+justify-content:space-between;
+gap:20px;padding:9px 0}
+.top-links{
+display:flex;gap:20px}
+.header{
+
+background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 3px 16px rgba(0,0,0,.07)}
+.nav-wrap{min-height:82px;display:flex
+
+;align-items:center;justify-content:space-between;gap:25px}
+.logo{
+display:flex;
+align-items:center;gap:12px;
+font-weight:800;
+font-size:21px;color:var(--navy)}
+.logo-mark{
+    background-image: url(cropped-cropped-cropped-cropped-cropped-DTESD.png);
+    background-size: cover;
+    width:48px;height:48px;border-radius:8px;
+    /* background:var(--blue); */
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font-weight:800;font-size:18px}
+.logo small{
+    display:block;font-size:10px;letter-spacing:1.5px;color:var(--muted);font-weight:600}
+.nav{
+display:flex;align-items:center;gap:24px}
+.nav a{
+font-size:14px;font-weight:600;
+color:#26364d;
+padding:30px 0;
+position:relative}
+.nav a:hover,.nav a.active{
+color:var(--blue)}
+.nav a.active:after{content:"";position:absolute;bottom:20px;left:0;width:100%;height:3px;background:var(--gold)}
+.menu-btn{
+display:none;background:none;border:0;font-size:28px;color:var(--navy);cursor:pointer}
+.btn{
+display:inline-flex;align-items:
+
+center;justify-content:center;
+gap:8px;
+padding:13px 22px;
+border-radius:4px;
+font-weight:700;
+font-size:14px;
+border:2px solid transparent;
+transition:.25s;cursor:pointer
+}
+.btn-primary{
+background:var(--blue);color:#fff
+}
+.btn-primary:hover{
+
+background:#0e568d;
+transform:translateY(-2px)}
+.btn-gold{
+    background:var(--gold);
+    color:var(--navy)
+}
+.btn-outline
+{
+    border-color:#fff;
+    color:#fff
+}.btn-outline:
+hover{
+        background:#fff;
+        color:var(--navy)}
+.section{
+    padding:82px 0
+}.section-light{
+background:var(--light)}
+.eyebrow{
+    color:var(--blue);
+    font-size:13px;
+text-transform:uppercase;
+
+letter-spacing:1.7px;
+font-weight:800;
+margin-bottom:10px}
+.section-title{
+font-size:clamp(30px,4vw,46px);
+line-height:1.15;
+color:var(--navy);
+margin-bottom:16px}
+.section-text{
+max-width:700px;color:var(--muted);
+margin-bottom:30px}
+.page-hero{
+background-image: url();
+padding:100px 0;
+background:linear-gradient(110deg,rgba(16,35,63,.94),rgba(23,105,170,.78)),url('8c06c36f-9435-41f7-93cb-46611dd881ee.jpeg') center/cover;color:#fff}
+.page-hero h1{
+    font-size:clamp(40px,6vw,68px);line-height:1.05;
+    margin-bottom:16px
+}
+.page-hero p{
+    max-width:700px;color:#e9f2fb}
+.grid{
+    display:grid;
+    gap:24px
+}.grid-3{
+        grid-template-columns:repeat(3,1fr)
+    }
+    .grid-4{
+        grid-template-columns:repeat(4,1fr)
+    }
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:var(--shadow)
+}
+.card-body{
+    padding:25px
+}.card h3{
+    color:var(--navy);margin-bottom:9px
+    }
+    .card p{
+    color:var(--muted);font-size:14px
+    }
+.icon{
+    
+    width:52px;
+    height:52px;
+    border-radius:8px;
+    background:var(--sky);
+    display:grid;
+    place-items:center;
+    font-size:25px;
+    margin-bottom:18px}
+.stats{
+    background:var(--navy);
+    
+    color:#fff
+}.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr)}
+.stat{
+    
+    text-align:center;padding:38px 15px;
+    border-right:1px solid rgba(255,255,255,.15)
+}
+.stat:last-child{
+border:0
+}
+.stat strong{
+    font-size:38px;
+    display:block;color:var(--gold)
+}
+.stat span{font-size:13px;color:#dce6f2
+}
+.cta{
+    background:var(--blue);color:#fff;padding:55px 0
+}
+.cta-inner{
+display:flex;align-items:center;
+justify-content:space-between;gap:25px
+}
+.cta h2{
+    font-size:32px
+}
+.footer{
+    background:#0b182b;color:#d6dfeb;
+    padding:65px 0 20px
+}.footer-grid{
+        display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:45px}
+        .footer h3{color:#fff;margin-bottom:17px}.
+        footer p,.footer a{
+            font-size:14px;color:#aebdce}
+            .footer a{
+                display:block;margin:9px 0}
+            .footer a:hover{
+                
+ color:#fff}.footer-bottom{
+                    border-top:1px solid rgba(255,255,255,.12);
+                    margin-top:45px;padding-top
+                    :18px;font-size:13px;
+                    display:flex;
+                    justify-content:space-between}
+.form{
+    
+    display:grid;
+    gap:16px
+}.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px
+}.form label{
+    font-weight:600;
+    font-size:14px
+}
+.form input,.form select,.form textarea{
+    width:100%;margin-top:6px;padding:13px;border:1px solid #ccd4df;
+    border-radius:4px;font:inherit
+}.form textarea{min-height:130px;resize:vertical}
+.notice{
+    padding:15px 18px;
+    background:#fff8e5;
+    border-left:4px solid var(--gold);
+    color:#5f4b18;margin:20px 0}
+@media(max-width:900px){
+ .menu-btn{
+    display:block
+}.nav{display:none;position:absolute;
+    top:82px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:15px 4%;box-shadow:0 10px 20px rgba(0,0,0,.1);gap:0}.nav.open{display:flex}.nav a{padding:13px 0}.nav a.active:after{display:none}.top-links{display:none}.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}
+}
+@media(max-width:600px)
+{
+ .grid-3,.grid-4,.form-grid,.footer-grid,.stats-grid{grid-template-columns:1fr}.topbar .container{justify-content:center}.nav-wrap{min-height:74px}.nav{top:74px}.logo{font-size:17px}.logo-mark{width:40px;height:40px}.section{padding:60px 0}.page-hero{padding:75px 0}.cta-inner{flex-direction:column;align-items:flex-start}.footer-bottom{flex-direction:column;gap:8px}
+}
+
+.featured{
+display:grid;
+    grid-template-columns:1fr 1fr;gap:40px;
+    background:var(--light);align-items:center;
+    margin-bottom:50px}.featured img{width:100%;
+        height:360px;object-fit:cover}.featured>div{padding:35px}.date{color:var(--blue);font-size:12px;text-transform:uppercase;font-weight:800;letter-spacing:1px}.featured h2{font-size:34px;line-height:1.2;color:var(--navy);margin:12px 0}.featured p{color:var(--muted);margin-bottom:22px}.news-grid img{height:220px;width:100%;object-fit:cover}
+@media(max-width:750px){.featured{grid-template-columns:1fr}.featured img{height:260px}}
+
+</style>
+<body>
+<div class="topbar">
+<div class="container">
+    <span>Latest from  Polytechnic Institute Thorgo</span>
+    <div class="top-links">
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </div>
+</div>
+<header class="header">
+<div class="container nav-wrap">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>
+        <span> Polytechnic Institute Thorgo<small>SKILLS • INNOVATION • FUTURE</small></span>
+    </a><button class="menu-btn">☰</button>
+    <nav class="nav"><a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="gallery.html">Gallery</a>
+        <a class="active" href="news.html">News & Events</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    </div>
+</header>
+<section class="page-hero">
+    <div class="container">
+    <span class="eyebrow">Stay informed</span>
+    <h1>News & Events</h1>
+    <p>Announcements, activities, workshops and opportunities from our institute.</p></div>
+</section>
+<section class="section">
+    <div class="container">
+    <div class="featured">
+<img src="8c06c36f-9435-41f7-93cb-46611dd881ee.jpeg">
+<div> <span class="date">01 October 2026</span>
+    <h2>New practical learning opportunities for students
+
+</h2> <p>Our institute continues to expand practical learning activities across technology, design, technical and hospitality fields.</p>
+<a class="btn btn-primary" href="#">Read More</a>
+    </div>
+</div>
+<div class="grid grid-3 news-grid"><article class="card">
+    <img src="it-courses.jpg">
+    <div class="card-body">
+        <span class="date">September 2026</span>
+        <h3>Technology Skills Workshop</h3>
+        <p>Students explore modern digital tools and practical project work.</p></div>
+    </article><article class="card">
+        <img src="y (1).jpg">
+        <div class="card-body">
+            <span class="date">August 2026</span>
+            <h3>Fashion Design Activity</h3>
+            <p>A creative learning session focused on design ideas and practical skills.</p>
+        </div>
+    </article>
+            <article class="card">
+                <img src="8c06c36f-9435-41f7-93cb-46611dd881ee.jpeg">
+                <div class="card-body">
+                    <span class="date">August 2026</span>
+                    <h3>Culinary Skills Session</h3>
+                    <p>Hands-on cooking practice and kitchen skill development.</p>
+                </div>
+            </article>
+        </div></div>
+    </section>
+<section class="cta">
+    <div class="container cta-inner"><div>
+    <h2>Want to join our next intake?</h2>
+    <p>Explore programs and start your registration.</p>
+</div>
+<a class="btn btn-gold" href="admissions.html">Register Now</a>
+</div>
+</section>
+<footer class="footer"><div class="container footer-grid">
+    <div>
+        <h3>Thorgo Polytechnic Institute</h3>
+        <p>Practical education for a changing world.</p>
+</div>
+    <div><h3>Explore</h3>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admissions.html">Admissions</a>
+    </div>
+    <div><h3>Student</h3><a href="gallery.html">Gallery</a>
+        <a href="news.html">News</a><a href="contact.html">Contact</a>
+    </div>
+    <div>
+        <h3>Contact</h3><p>Thorgo, Pakistan</p>
+        <p>info@thorgopolytechnic.edu</p>
+    </div>
+</div>
+    <div class="container footer-bottom">
+        <span>© 2026 Thorgo Polytechnic Institute.</span>
+        <span>All rights reserved.</span>
+    </div>
+</footer>
+<script >
+    const menu=document.querySelector('.menu-btn'),nav=document.querySelector('.nav');menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+</script>
+</body>
+</html>

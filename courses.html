@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Thorgo Polytechnic Institute</title>
+    <link rel="stylesheet" href="css/courses.css">
+</head>
+<style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+ --navy:#10233f; --blue:#032b4e; --sky:#eaf4fb; --gold:#f4b942;
+ --white:#fff; --dark:#172033; --muted:#667085; --light:#f6f8fb;
+ --border:#e5e7eb; --shadow:0 14px 40px rgba(16,35,63,.10);
+}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+html{
+scroll-behavior:smooth
+}
+body{
+font-family:Inter,Arial,sans-serif;
+color:var(--dark);
+line-height:1.6;
+background:#fff}
+a{
+text-decoration:none;
+color:inherit}
+img{
+max-width:100%;
+display:block}
+.container{
+width:min(1180px,92%);
+margin:auto}
+.topbar{
+background:var(--navy);
+color:#fff;
+font-size:13px}
+.topbar .container{
+display:flex;
+justify-content:space-between;
+gap:20px;
+padding:9px 0}
+.top-links{
+display:flex;gap:20px}
+.header{
+background:#fff;
+position:sticky;
+top:0;z-index:1000;
+box-shadow:0 3px 16px rgba(0,0,0,.07)}
+.nav-wrap{
+min-height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px}
+.logo{
+display:flex;align-items:center;
+gap:12px;
+font-weight:800;font-size:21px;
+color:var(--navy)}
+.logo-mark{
+width:48px;height:48px;
+border-radius:8px;
+background-image: url(cropped-cropped-cropped-cropped-cropped-DTESD.png);
+background-size: cover;
+/* background:var(--blue); */
+color:#fff;
+display:grid;
+place-items:center;
+font-weight:800;
+font-size:18px
+}
+.logo small{
+display:block;
+font-size:10px;
+letter-spacing:1.5px;
+color:var(--muted);
+font-weight:600
+}
+.nav{
+display:flex;align-items:center;gap:24px
+}
+.nav a{
+font-size:14px;
+font-weight:600;
+color:#26364d;
+padding:30px 0;
+position:relative}
+.nav a:hover,.nav a.active{
+color:var(--blue)
+}
+.nav a.active:after{
+content:"";
+position:absolute;
+bottom:20px;left:0;
+width:100%;
+height:3px;
+background:var(--gold)
+}
+.menu-btn{
+display:none;
+background:none;
+border:0;
+font-size:28px;
+color:var(--navy);
+cursor:pointer
+}
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;padding:13px 22px;
+border-radius:4px;
+font-weight:700;
+font-size:14px;
+border:2px solid transparent;
+transition:.25s;
+cursor:pointer
+}
+.btn-primary{
+background:var(--blue);
+color:#fff
+}
+.btn-primary:hover{
+background:#0e568d;
+transform:translateY(-2px)}
+.btn-gold{
+background:var(--gold);
+color:var(--navy)
+}
+.btn-outline{
+border-color:#fff;color:#fff
+}
+.btn-outline:hover{
+background:#fff;
+color:var(--navy)}
+.section{
+padding:82px 0
+}
+.section-light{background:var(--light)
+}
+.eyebrow{
+color:var(--blue);
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:1.7px;
+font-weight:800;
+margin-bottom:10px
+}
+.section-title{
+font-size:clamp(30px,4vw,46px);
+line-height:1.15;
+color:var(--navy);
+margin-bottom:16px
+}
+.section-text{
+max-width:700px;
+color:var(--muted);
+margin-bottom:30px}
+.page-hero{
+padding:100px 0;
+ background:linear-gradient(110deg,rgba(16,35,63,.94),
+    rgba(23,105,170,.78)),
+    url(elec.jpg)
+     center/cover;
+
+/* background:linear-gradient(110deg,rgba(19, 18, 18, 0.94),rgba(115, 114, 114, 0.78)),url('wd (1).jpeg') center/cover; */
+color:#fff}
+.page-hero h1{
+font-size:clamp(40px,6vw,68px);
+line-height:1.05;
+margin-bottom:16px
+}
+.page-hero p{
+max-width:700px;
+color:#e9f2fb}
+.grid{
+display:grid;
+gap:24px
+}
+.grid-3{
+grid-template-columns:repeat(3,1fr)
+}.grid-4{
+grid-template-columns:repeat(4,1fr)}
+.card{
+background:#fff;
+border:1px solid var(--border);
+border-radius:8px;
+overflow:hidden;
+box-shadow:var(--shadow)
+
+}
+.card-body{
+padding:25px
+
+}
+.card h3{
+color:var(--navy);
+margin-bottom:9px;
+/* background-image: url(wd (8).jpg); */
+
+}
+.card p{
+    color:var(--muted);
+font-size:14px}
+.icon{
+width:52px;height:52px;
+/* background-image: url(wd (8).jpg); */
+background-size:cover;
+border-radius:8px;
+/* background:var(--sky); */
+display:grid;
+place-items:center;
+font-size:25px;
+margin-bottom:18px
+}
+.stats{
+background:var(--navy);
+color:#fff}.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr)}
+.stat{
+text-align:center;
+padding:38px 15px;
+border-right:1px solid rgba(255,255,255,.15)
+}.stat:last-child{
+    border:0
+}
+.stat strong{
+    font-size:38px;
+display:block;
+color:var(--gold)
+}.stat span{
+font-size:13px;
+color:#dce6f2}
+.cta{
+background:var(--blue);
+color:#fff;
+padding:55px 0
+}.cta-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px
+}.cta h2{
+    font-size:32px}
+.footer{
+background:#0b182b;
+color:#d6dfeb;
+padding:65px 0 20px
+}.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:45px
+}
+.footer h3{
+        color:#fff;
+        margin-bottom:17px
+    }.footer p,.footer a{
+        font-size:14px;
+        color:#aebdce
+    }.footer a{
+    display:block;
+    margin:9px 0
+}.footer a:hover{
+    color:#fff
+}
+.footer-bottom{
+        border-top:1px solid rgba(255,255,255,.12);
+        margin-top:45px;
+        padding-top:18px;
+        font-size:13px;
+        display:flex;
+        justify-content:space-between
+    }
+.form{
+display:grid;
+gap:16px
+}.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px
+}.form label{
+    font-weight:600;
+    font-size:14px
+}
+.form input,.form select,.form textarea{
+    width:100%;
+    margin-top:6px;
+    padding:13px;
+    border:1px solid #ccd4df;
+    border-radius:4px;
+    font:inherit
+}
+.form textarea{
+    min-height:130px;
+    resize:vertical
+}
+.notice{
+    padding:15px 18px;
+    background:#fff8e5;
+    border-left:4px solid var(--gold);
+    color:#5f4b18;
+    margin:20px 0}
+@media(max-width:900px){
+ .menu-btn{display:block}.nav{display:none;
+position:absolute;
+top:82px;
+left:0;
+right:0;
+background:#fff;
+flex-direction:column;
+align-items:stretch;
+padding:15px 4%;box-shadow:0 10px 20px rgba(0,0,0,.1);
+gap:0}.nav.open{display:flex}.nav a{padding:13px 0}
+.nav a.active:after{display:none}.top-links{display:none}.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}
+}
+@media(max-width:600px){
+ .grid-3,.grid-4,.form-grid,.footer-grid,.stats-grid{grid-template-columns:1fr}.topbar .container{justify-content:center}.nav-wrap{min-height:74px}.nav{top:74px}.logo{font-size:17px}.logo-mark{width:40px;height:40px}.section{padding:60px 0}.page-hero{padding:75px 0}.cta-inner{flex-direction:column;align-items:flex-start}.footer-bottom{flex-direction:column;
+    gap:8px}
+}
+
+.course-tools{
+    display:flex;
+    gap:15px;
+    margin-bottom:35px
+}
+.course-tools input,.course-tools select{
+    padding:15px;
+    border:1px solid var(--border);
+    font:inherit;
+    border-radius:4px;
+}
+.course-tools input{
+    flex:1
+}.course-card{
+    padding:30px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start
+}.course-icon{
+    width:60px;
+    height:60px;
+    background:var(--sky);
+    display:grid;
+    place-items:center;
+    border-radius:10px;
+    font-size:28px;
+    margin-bottom:18px
+}.course-card h3{
+    color:var(--navy);
+    font-size:21px;
+    margin-bottom:9px
+}.course-card p{
+    color:var(--muted);
+    font-size:14px;
+    min-height:66px
+}.course-card span{
+    display:inline-block;
+    background:#f2f5f8;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:12px;
+    margin:15px 0;
+    color:var(--navy)
+}.course-card .btn{
+    margin-top:auto
+}.no-results{
+    display:none;
+    text-align:center;
+    padding:40px;
+    color:var(--muted)}
+@media(max-width:650px){
+    .course-tools{flex-direction:column}}
+
+</style>
+<body>
+<div class="topbar">
+    <div class="container">
+    <span>Explore our programs</span>
+    <div class="top-links">
+        <a href="admissions.html">Apply Now</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+</div>
+<header class="header">
+    <div class="container nav-wrap">
+    <a class="logo" href="index.html">
+        <span class="logo-mark">
+
+        </span>
+        <span> Polytechnic Institute Thorgo<small>SKILLS • INNOVATION • FUTURE</small>
+        </span>
+    </a>
+        <button class="menu-btn">☰</button>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a class="active" href="courses.html">Courses</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="news.html">News & Events</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        </div>
+    </header>
+<section class="page-hero">
+    <div class="container"><span class="eyebrow">Study with us</span>
+        <h1>Courses & Diplomas</h1>
+        <p>Choose from practical programs across technology, design, technical trades and hospitality.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+    <div class="course-tools">
+        <input id="courseFilter" placeholder="Search courses...">
+        <select id="categoryFilter">
+            <option value="all">All fields</option
+            option value="it">IT & Technology</option>
+            <option value="fashion">Fashion & Design</option>
+            <option value="technical">Technical Trades</option>
+            <option value="cooking">Cooking & Hospitality</option>
+            <option value="diploma">Diploma Programs</option>
+        </select>
+    </div>
+<div class="grid grid-3" id="courseGrid">
+<article class="course-card" data-category="it" id="it">
+    <div class="course-icon">💻</div>
+    <h3>Web Development</h3>
+    <p>Learn HTML, CSS, JavaScript and modern web development concepts.</p>
+    <span>6 Months</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="it">
+    <div class="course-icon">🤖</div>
+    <h3>Artificial Intelligence</h3>
+    <p>Introduction to AI concepts, data, automation and intelligent applications.</p>
+    <span>6 Months</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="it">
+    <div class="course-icon">🛒</div>
+    <h3>E-Commerce</h3>
+    <p>Learn online business, digital stores, product management and marketing.</p>
+    <span>4 Months</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="it"><div class="course-icon">🎨</div><h3>Graphic Design</h3><p>Develop creative design skills for digital and print communication.</p><span>6 Months</span><a href="admissions.html" class="btn btn-primary">Apply Now</a></article>
+<article class="course-card" data-category="fashion" id="fashion"><div class="course-icon">👗</div><h3>Fashion Design</h3><p>Explore fashion concepts, sketching, garment ideas and creative design.</p><span>6 Months</span><a href="admissions.html" class="btn btn-primary">Apply Now</a></article>
+<article class="course-card" data-category="cooking" id="cooking"><div class="course-icon">🍳</div><h3>Cooking & Culinary Skills</h3><p>Practical food preparation, kitchen skills and culinary techniques.</p><span>3 Months</span><a href="admissions.html" class="btn btn-primary">Apply Now</a></article>
+<article class="course-card" data-category="technical">
+    <div class="course-icon">⚡</div><h3>Electrician</h3>
+    <p>Build foundational electrical installation, safety and maintenance skills.</p>
+    <span>6 Months</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="diploma">
+    <div class="course-icon">📜</div>
+    <h3>IT Diploma</h3><p>A broader diploma pathway covering essential information technology skills.</p>
+    <span>1 Year</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="diploma">
+    <div class="course-icon">📜</div>
+    <h3>Electrical Diploma</h3>
+    <p>Technical diploma pathway focused on electrical technology and practice.</p>
+    <span>1 Year</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="diploma">
+    <div class="course-icon">📜</div>
+    <h3>Fashion Design Diploma</h3>
+    <p>Extended practical training in fashion and creative design.</p>
+    <span>1 Year</span><a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="diploma">
+    <div class="course-icon">📜</div>
+    <h3>Web Development Diploma</h3>
+    <p>Extended web development training with practical projects.</p>
+    <span>1 Year</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+<article class="course-card" data-category="cooking">
+    <div class="course-icon">🏨</div>
+    <h3>Hospitality Skills</h3>
+    <p>Customer service, food service and hospitality fundamentals.</p>
+    <span>4 Months</span>
+    <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+</article>
+</div><p id="noResults" class="no-results">No matching courses found.</p>
+</div>
+</section>
+<section class="cta"><div class="container cta-inner">
+    <div>
+    <h2>Not sure which course to choose?</h2>
+    <p>Contact our admissions team for guidance.</p>
+</div><a class="btn btn-gold" href="contact.html">Contact Us</a>
+</div></section>
+<footer class="footer">
+    <div class="container footer-grid"><div>
+    <h3>Thorgo Polytechnic Institute</h3>
+    <p>Practical education and career-focused skills.</p>
+</div><div>
+        <h3>Explore</h3><a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admissions.html">Admissions</a>
+    </div>
+        <div>
+            <h3>Student</h3>
+            <a href="gallery.html">Gallery</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </div><div>
+            <h3>Contact</h3>
+            <p>Thorgo, Pakistan</p>
+            <p>info@thorgopolytechnic.edu</p>
+        </div>
+    </div><div class="container footer-bottom">
+            <span>© 2026 Thorgo Polytechnic Institute.</span>
+                <span>All rights reserved.</span>
+            </div>
+            </footer>
+            <script src="js/courses.js">
+                const menu=document.querySelector('.menu-btn'),nav=document.querySelector('.nav');menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+const input=document.getElementById('courseFilter'),select=document.getElementById('categoryFilter'),cards=[...document.querySelectorAll('.course-card')],no=document.getElementById('noResults');
+function filter(){const q=input.value.toLowerCase(),cat=select.value;let count=0;cards.forEach(c=>{const okText=c.innerText.toLowerCase().includes(q),okCat=cat==='all'||c.dataset.category===cat;c.style.display=okText&&okCat?'flex':'none';if(okText&&okCat)count++});no.style.display=count?'none':'block'}
+input.addEventListener('input',filter);select.addEventListener('change',filter);const params=new URLSearchParams(location.search);if(params.get('search')){input.value=params.get('search');filter()}
+
+
+            </script>
+            </body></html>
